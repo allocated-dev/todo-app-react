@@ -1,7 +1,59 @@
 import Hrimg from '../assets/hero image.png'
 
+const Features = [
+  {
+    id: 1,
+    title: "Daily Tasks",
+    img: Hrimg,
+    Loc: "todos"
+  },
+  {
+    id: 2,
+    title: "Budget & Expense Tracker",
+    img: Hrimg,
+    Loc: "Budget"
+  },
+  {
+    id: 3,
+    title: "Notes & Ideas Section",
+    img: Hrimg,
+    Loc: "Ideas"
+  },
+  {
+    id: 4,
+    title: "Daily Planner / Schedule",
+    img: Hrimg,
+    Loc: "Planner"
+  },
+  {
+    id: 5,
+    title: "Focus Timer / Pomodoro Section",
+    img: Hrimg,
+    Loc: "Timer"
+  },
+  {
+    id: 6,
+    title: "Goals & Milestones",
+    img: Hrimg,
+    Loc: "Goals"
+  }, 
+]
+
 export default function HomePage() {
 
+
+  const handleFeatrue = (item)=>{ 
+    switch (item) {
+      case "todos":
+        window.location.pathname = "todos"
+        break;
+        
+        default:
+          // window.location.pathname = ""
+        break;
+    }
+    // console.log(window.location.pathname = "Daily Tasks")
+  }
   return (
     <div className="bg-gray-300 min-h-screen max-h-[100%] ">
       <header className="hero section max-w-7xl m-auto flex flex-col md:flex-row items-start justify-center gap-5 py-5  ">
@@ -18,27 +70,17 @@ export default function HomePage() {
           <div className="flex flex-row items-center justify-center pb-5 mx-5 md:w-[100%] relative ">
             <h2 className='text-2xl font-semibold font-serif'>Features</h2> 
           </div>
-          <div className="flex flex-col flex-wrap md:flex-row items-center justify-center gap-5 ">
-            <div className="max-w-xs rounded-4xl bg-amber-600">
-              <img src={Hrimg} alt="" className='w-[full] h-[300px] rounded-4xl ' />
-              <span className='text-xl font-bold text-[black] py-5 block text-center '>Budget & Expense Tracker</span>
-            </div>
-            <div className="max-w-xs rounded-4xl bg-amber-600">
-              <img src={Hrimg} alt="" className='w-[full] h-[300px] rounded-4xl ' />
-              <span className='text-xl font-bold text-[black] py-5 block text-center '>Notes & Ideas Section</span>
-            </div>
-            <div className="max-w-xs rounded-4xl bg-amber-600">
-              <img src={Hrimg} alt="" className='w-[full] h-[300px] rounded-4xl ' />
-              <span className='text-xl font-bold text-[black] py-5 block text-center '>Daily Planner / Schedule</span>
-            </div>
-            <div className="max-w-xs rounded-4xl bg-amber-600">
-              <img src={Hrimg} alt="" className='w-[full] h-[300px] rounded-4xl ' />
-              <span className='text-xl font-bold text-[black] py-5 block text-center '>Focus Timer / Pomodoro Section</span>
-            </div>
-            <div className="max-w-xs rounded-4xl bg-amber-600">
-              <img src={Hrimg} alt="" className='w-[full] h-[300px] rounded-4xl ' />
-              <span className='text-xl font-bold text-[black] py-5 block text-center '>Goals & Milestones</span>
-            </div> 
+          <div className="flex flex-col flex-wrap md:flex-row items-center justify-center gap-5 "> 
+            {
+              Features?.map((Ftr)=>{
+                return(
+                  <div key={Ftr.id} className="max-w-xs rounded-4xl bg-amber-600" onClick={()=>{handleFeatrue(Ftr.Loc)}} >
+                    <img src={Ftr.img} alt="" className='w-[full] h-[300px] rounded-4xl ' />
+                    <span className='text-xl font-bold text-[black] py-5 block text-center '>{Ftr.title}</span>
+                  </div>
+                );
+              })
+            }
           </div>
         </section>
       </main>
