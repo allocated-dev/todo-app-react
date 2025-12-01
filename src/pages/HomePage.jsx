@@ -9,9 +9,9 @@ const Features = [
   },
   {
     id: 2,
-    title: "Budget & Expense Tracker",
+    title: "Image to text converter",
     img: Hrimg,
-    Loc: "Budget"
+    Loc: "image-to-text"
   },
   {
     id: 3,
@@ -46,6 +46,9 @@ export default function HomePage() {
     switch (item) {
       case "todos":
         window.location.pathname = "todos"
+        break;
+      case "image-to-text":
+        window.location.pathname = "image-to-text"
         break;
         
         default:
