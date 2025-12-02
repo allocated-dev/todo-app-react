@@ -1,0 +1,11 @@
+h1, h2, h3, h4 { color: #333; margin: 8px 0; }
+strong { font-weight: bold; font-size: 1.2rem; }
+em { font-style: italic; }
+del { text-decoration: line-through; }
+code { background: #eee; padding: 2px 4px; border-radius: 3px; font-family: monospace; }
+pre { background: #272822; color: #f8f8f2; padding: 10px; border-radius: 5px; overflow-x: auto; }
+ul { margin-left: 20px; list-style-type: disc; }
+h1 {
+  font-size: 2rem;
+  color: #333;
+} 
